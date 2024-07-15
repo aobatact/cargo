@@ -319,6 +319,7 @@ A successful response includes the JSON object:
 - Query Parameters:
     - `q`: The search query string.
     - `per_page`: Number of results, default 10, max 100.
+    - `page`: Current page number, default 1.
 
 The search request will perform a search for crates, using criteria defined on
 the server.
@@ -340,7 +341,11 @@ A successful response includes the JSON object:
     ],
     "meta": {
         // Total number of results available on the server.
-        "total": 119
+        "total": 119,
+        // Query Parameters of previous page.
+        "prev_page": null,
+        // Query Parameters of next page.
+        "next_page": "?page=2&per_page=1&q=rand"
     }
 }
 ```
